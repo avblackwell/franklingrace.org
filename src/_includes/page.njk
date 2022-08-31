@@ -2,10 +2,12 @@
 layout: base.njk
 ---
 
-{% include 'header.njk' %}
+{% include 'partials/header.njk' %}
 <main>
   <section>
-    {% include 'card.njk' %}
-    {% include 'center.njk' %}
+    {% include 'partials/cards.njk' %}
+    {% include 'partials/center.njk' %}
+    {% include 'partials/switcher-reverse.njk' %}
+    {% include 'partials/switcher.njk' %}
   </section>
 </main>

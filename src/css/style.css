@@ -200,6 +200,7 @@ blockquote {
   margin-block: auto;
 }
 
+/* grid */
 .grid {
   display: grid;
   grid-gap: 1rem;
@@ -211,14 +212,65 @@ blockquote {
   }
 }
 
+/* center */
+
 .center {
   box-sizing: content-box;
   margin-inline: auto;
   max-inline-size: var(--measure);
-  display:flex;
+  display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
+}
+
+.frame {
+  --n: 16;
+  --d: 9;
+  aspect-ratio: var(--n) / var(--d);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.frame>img,
+.frame>video {
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+}
+
+.switcher {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-1);
+}
+
+.switcher>* {
+  flex-grow: 1;
+  flex-basis: calc((30rem - 100%) * 999);
+}
+
+.switcher>:nth-last-child(n + 3),
+.switcher>:nth-last-child(n+ 3)~* {
+  flex-basis: 100%;
+}
+
+.sidebar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s1);
+}
+
+.sidebar> :first-child {
+  flex-grow: 1;
+}
+
+.sidebar> :last-child {
+  flex-basis: 0;
+  flex-grow: 999;
+  min-inline-size: 25%;
 }
 
 .block {
