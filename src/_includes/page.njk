@@ -2,11 +2,10 @@
 layout: base.njk
 ---
 
-<header>
-  <h1>{{ title }}</h1>
-</header>
+{% include 'header.njk' %}
 <main>
-  <article>
-    {{ content | safe }}
-  </article>
+  <section>
+    {% include 'card.njk' %}
+    {% include 'center.njk' %}
+  </section>
 </main>
