@@ -5,13 +5,12 @@
   --font-mono: Menlo, Courier, Courier New, Andale Mono, monospace;
 
 
-  --light: #fefbe9;
+  --light: #fff;
 
-  --dark-green: #183a1d;
-  --light-green: #e1eedd;
-  --light-green2: #b0c3aa;
-  --lime: #73a24e;
-  --lime2: #a9c25d;
+  --dark-purple: #6a0041;
+  --purple: #98015e;
+  --green: #6FA94C;
+
 
 
   --step--2: clamp(0.91rem, calc(0.89rem + 0.10vw), 0.96rem);
@@ -154,8 +153,8 @@ blockquote {
 /* box primitive */
 
 .box {
-  padding: var(--s3);
-  color: var(--dark-green);
+  padding: var(--s2);
+  color: var(--dark-purple);
   background-color: var(--light);
 }
 
@@ -165,7 +164,7 @@ blockquote {
 
 .box.invert {
   color: var(--light);
-  background-color: var(--dark-green);
+  background-color: var(--dark-purple);
 }
 
 .box.nav {
@@ -173,8 +172,8 @@ blockquote {
 }
 
 .box.card {
-  padding: var(--s2);
-  border-bottom: 10px solid var(--lime);
+  padding: var(--s1);
+  border-bottom: 10px solid var(--purple);
 }
 
 /* cover */
@@ -208,7 +207,7 @@ blockquote {
 
 @supports (width: min(250px, 100%)) {
   .grid {
-    grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
   }
 }
 
@@ -257,20 +256,19 @@ blockquote {
   flex-basis: 100%;
 }
 
-.sidebar {
+.with-sidebar {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--s1);
 }
 
-.sidebar> :first-child {
+.with-sidebar > :last-child {
   flex-grow: 1;
 }
 
-.sidebar> :last-child {
+.with-sidebar > :first-child {
   flex-basis: 0;
   flex-grow: 999;
-  min-inline-size: 25%;
+  min-inline-size: 66%;
 }
 
 .block {
@@ -278,7 +276,9 @@ blockquote {
 }
 
 .bg {
-  --bg-image: url("../images/skyline.jpg");
+  --bg-image: url("../images/p.jpg");
+  --bg-image-opacity: 0.60;
+
   position: relative;
   isolation: isolate;
 }
@@ -291,6 +291,31 @@ blockquote {
   background-image: var(--bg-image);
   background-size: cover;
   background-position: center;
+}
+
+/* .btn {
+  box-sizing: border-box;
+  appearance: none;
+  background-color: transparent;
+  border: 2px solid var(--dark-purple);
+  border-radius: 0.6em;
+  color: var(--dark-purple);
+  cursor: pointer;
+  
+  
+  padding: var(--s0);
+  text-decoration: none;
+} */
+
+input {
+  width: 100%;
+    font-size: inherit;
+    font-family: var(--font-mono);
+    border-width: var(--border-thin);
+    color: #6a0041;
+    background-color: #fff;
+    border-radius: 0;
+    padding: var(--s-2);
 }
 
 /* utility */

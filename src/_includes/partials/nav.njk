@@ -1,11 +1,9 @@
 {% set currentUrl %}{{ page.url }}{% endset %}
 <div class="box nav">
   <div class="wrapper">
-    <nav>
+    <nav style="display:flex; justify-content:space-between; align-items: baseline; flex-wrap:wrap;">
+      <a {% if currentUrl === '/' %} aria-current="page" {% endif %} href="/">Logo Here</a>
       <ul role="list">
-        <li>
-          <a {% if currentUrl === '/' %} aria-current="page" {% endif %} href="/">Home</a>
-        </li>
         {% for page in collections.pages %}
           <li>
             <a {% if currentUrl === page.url %} aria-current="page" {% endif %} href="{{ page.url }}">

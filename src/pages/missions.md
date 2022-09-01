@@ -1,5 +1,5 @@
 ---
-title: Page One
+title: Missions
 ---
 
 This is the first page.
